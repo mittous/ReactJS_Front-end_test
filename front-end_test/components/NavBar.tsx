@@ -1,133 +1,110 @@
 import React, { useContext } from 'react'
 import { AppContext } from '../app/context/AppContextProvider'
 import Image from 'next/image'
-import Images from '../public/assets/Images'
-
+import dropLanguage from './dropLanguage';
+import DropLanguage from './dropLanguage';
+import DropProfile from './DropProfile';
+import Sites from './Sites';
 
 function NavBar() {
-  
   const data:any = useContext(AppContext);
-  
-  const menuItems = [
-    {
-      icon:  <Image  src='/assets/Vector.svg'
-                      alt='home' 
-                      width={20} 
-                      height={20}
-                      priority={true}
-                      className=' '
-                      />,
-      label: 'Dashboard'
-    },
-    {
-      icon: <Image   src={Images.hand}
-                      alt='home' 
-                      width={19} 
-                      height={19}
-                      priority={true}
-                      className=' '
-                      />,
-      label: 'P.P.E Violations'
-    },
-    {
-      icon:<Image   src='/assets/ppes.svg'
-                    alt='home' 
-                    width={19} 
-                    height={19}
-                    priority={true}
-                    className=''
-                    /> ,
-      label:  'P.P.Es'
-    },
-    {
-      icon:<Image   src='/assets/Contractors.svg'
-                    alt='home' 
-                    width={19} 
-                    height={19}
-                    priority={true}
-                    className=''
-                    />,
-      label:  'Contractors'
-    },
-    {
-      icon:<Image   src='/assets/Workers.svg'
-                    alt='home' 
-                    width={19} 
-                    height={19}
-                    priority={true}
-                    className=''
-      />,
-      label:  'Workers'
-    },
-  ]
-
-                            
-
-                            
-
-                            
-  const firstTwoItems = menuItems.slice(0, 2);
-  const lastItems = menuItems.slice(2, 5);
 
   return (
-    <div className={` bg-white fixed border border-zinc-300 h-screen duration-300 ${data.navOn?'w-[252px]':'w-[65px]'} `}>
-      {data.navOn && <div className='flex justify-between  pl-[8px] pt-[10px] pr-[19px] pb-[10px]'>
+    <div className=' z-[99px] border border-zinc-300 min-h-[60px] bg-white fixed top-0 w-full'>
+      <div className='flex justify-between items-center h-full py-[20px]'>
         
-          <Image  src={Images.logo}
-                alt='logo' 
-                width={190} 
-                height={42.73}
-                priority={true}
-                draggable={false}
-                /> 
-          <Image  src={Images.toggle}
-                alt='toggle' 
-                width={17} 
-                height={12}
-                priority={true}
-                draggable={false}
-                className='cursor-pointer'
-                onClick={(e) => {data.setNavOn(false)}}
-                 />
-
-        </div> }
-            {!data.navOn && <Image  src='/assets/logosmall.svg'
-                alt='logo' 
-                width={34} 
-                height={36}
-                priority={true}
-                draggable={false}
-                className='m-[13px]'
-                />}
-
-            <ul className='px-[21px] py-[20px] text-[#626262]'>
-                {firstTwoItems.map((item, index) => (
-                <li className={`${data.navOn && 'pl-[6px]'} h-9 hover:bg-[#42A4DF] cursor-pointer rounded-[5px] flex justify-start items-center`}>
-                  <div key={index}>{item.icon}</div>
-                  {data.navOn && <p className='pl-[13px]'>{item.label}</p>}
-                </li>
-                ))}
-              
-            </ul>
-            
-                {data.navOn ? <span className=' pl-[18px] mb-[5px] text-[#626262]' > MANAGE </span> : <hr/>}
-            
-            <ul className='px-[21px] py-[5px] text-[#626262]'>
-                {lastItems.map((item, index) => (
-                <li className={`${data.navOn && 'pl-[6px]'} h-9 hover:bg-[#42A4DF] cursor-pointer rounded-[5px] flex justify-start items-center`}>
-                  <div key={index}>{item.icon}</div>
-                  {data.navOn && <p className='pl-[13px]'>{item.label}</p>}
-                </li>
-                ))}
-            </ul>
-
-            {data.navOn && <div className='text-[#8A8A8A] border-t-2 pl-[16px] pt-[5px] w-[250px] h-24 fixed bottom-0'>
-            <span className=" text-[13px] font-medium  leading-[30px]">@ App name 2021</span>
-            <div className="  text-[11px] font-normal  leading-[17.50px]">
-              Lorem ipsum dolor sit amet, consectetur<br/>adipiscing elit, sed do eiusmod tempor<br/>incididunt ut.</div>
-            </div>}
+        <div className=' flex items-center mx-[18px]   '>
+        
+            <Image  src='/assets/toggle.svg'
+                  alt='toggle' 
+                  width={17} 
+                  height={12}
+                  priority={true}
+                  draggable={false}
+                  className='cursor-pointer mr-[20px]'
+                  onClick={(e) => {data.setNavOn(true)}}
+            />
+          <div className='text-[#313131]  text-[18px] font-medium  '>Overview</div>
+        </div>
+        
+        <div className='flex items-center '>
+          <div className='flex min-w-[150px] justify-between items-center '>
+              <Image  src='/assets/fontSize.svg'
+                    alt='fontSize' 
+                    width={21} 
+                    height={30}
+                    priority={true}
+                    draggable={false}
+                    className='rounded-[5px] flex  items-center cursor-pointer'
+                    onClick={(e) => {}}
+              />
+              <Image  src='/assets/moon.svg'
+                    alt='moon' 
+                    width={14} 
+                    height={16}
+                    priority={true}
+                    draggable={false}
+                    className='rounded-[5px] flex  items-center cursor-pointer'
+                    onClick={(e) => {}}
+              />
+              <Image  src='/assets/notification.svg'
+                    alt='notification' 
+                    width={15} 
+                    height={20}
+                    priority={true}
+                    draggable={false}
+                    className='rounded-[5px] flex  items-center cursor-pointer'
+                    onClick={(e) => {}}
+              />
+              <Image  src='/assets/english.svg'
+                    alt='english' 
+                    width={20} 
+                    height={20}
+                    priority={true}
+                    draggable={false}
+                    className='rounded-[5px] flex  items-center cursor-pointer'
+                    onClick={(e) => { data.setDropLanguage(!data.dropLanguage)
+                      data.setDropProfile(false)
+                    }}
+              />
+          </div>
+          
+          <div  className=' cursor-pointer flex min-w-[140px] justify-between items-center mx-[48px]' 
+                onClick={(e) => {data.setDropProfile(!data.dropProfile)
+                  data.setDropLanguage(false)
+                }}>
+              <Image  src='/assets/Ellipse 1.svg'
+                    alt='Ellipse 1' 
+                    width={33} 
+                    height={33}
+                    priority={true}
+                    draggable={false}
+                    className='cursor-pointer '
+                    onClick={(e) => {}}
+              />
+              <span className='text-[#7A7A7A] hover:text-[#42A4DF] text-[13px] pr-[27px] pl-[8px]'> BESIX Group </span>
+              <Image  src='/assets/Arrow 2.svg'
+                    alt='Arrow 2' 
+                    width={10} 
+                    height={6}
+                    priority={true}
+                    draggable={false}
+                    className='cursor-pointer '
+                    onClick={(e) => {}}
+              />
+          </div>
+        
+        </div>
+      
+      </div>
+        <DropLanguage/>
+        <DropProfile/>
+        <Sites />
     </div>
   )
 }
 
 export default NavBar
+
+
+
