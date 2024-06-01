@@ -7,13 +7,14 @@ import SideBar from "@/components/SideBar";
 import DropProfile from "@/components/DropProfile";
 import DropLanguage from "@/components/dropLanguage";
 import Sites from "@/components/Sites";
+import "./globals.css";
 
 
 export default function Home() {
   return (
     
     <AppContextProvider>
-      <div className = 'flex w-full h-fit bg-[#F2F2F2] '>
+      <div className = 'flex w-full h-full'>
         <SideBar />
         <DashBoard />
         <DropLanguage/>
