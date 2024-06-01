@@ -63,7 +63,7 @@ function Top() {
             </div>
         </div>
         {
-            data.dropInpute && <div className=" z-50 top-[170px] right-[90px] rounded-[5px] shadow w-[170px] h-[186px] bg-white"> </div>
+            data.dropInpute && <div className=" top-[170px] right-[90px] rounded-[5px] shadow w-[170px] h-[186px] bg-white"> </div>
         }
     
     </div>
