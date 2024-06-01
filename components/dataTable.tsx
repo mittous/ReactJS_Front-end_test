@@ -175,16 +175,16 @@ const dataRow = [
 
             {dataColum.map((column, index) => (
               !i.includes(index) && (
-                <th key={index} className="flex-col bg-white items-center justify-between top-0 border-b border-gray-300 p-4 pb-0">
+                <th key={index} className="flex-col bg-white items-center justify-between p-4 pb-0">
                   
-                    <div className='flex justify-center  items-center w-[80px] h-[86px]  bg-[#F5F5F5] rounded-[5px]'>
-                      <div className='flex absolute'>
+                    <div className='flex justify-center  items-center min-w-[80px] h-[86px]  bg-[#F5F5F5] rounded-[5px]'>
+                      <div className='flex absolute justify-center items-center'>
                         {column.icon}
                       </div>
                    
                   </div>
                   
-                  <span className='flex justify-center  text-center py-3 h-[60px]  text-neutral-500 text-[11px] font-normal'> 
+                  <span className='flex justify-center  text-center pt-3 h-[60px]  text-neutral-500 text-[11px] font-normal'> 
                     {column.label}
                   </span>
                   </th>
