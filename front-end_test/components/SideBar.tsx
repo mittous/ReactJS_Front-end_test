@@ -69,7 +69,7 @@ function SideBar() {
   const lastItems = menuItems.slice(2, 5);
 
   return (
-    <div className={` bg-white  border border-zinc-300 h-screen duration-300 ${data.navOn ? 'w-[252px]   z-10 fixed' : ' z-10 min-w-[65px]'} `}>
+    <div className={` bg-white fixed left-0 border border-zinc-300 h-screen duration-300 ${data.navOn ? 'w-[252px]   z-10 fixed' : ' z-10 min-w-[66px]'} `}>
       {data.navOn && <div className='flex justify-between pl-[8px] pt-[10px] pr-[19px] pb-[10px]'>
         
           <Image  src={Images.logo}

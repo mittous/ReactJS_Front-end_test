@@ -18,7 +18,7 @@ function Top() {
   return (
     <div className='flex justify-between items-center h-[70px] my-[35px] pl-[40px] pr-[80px]  w-full fixed bg-[#F2F2F2] '>
         
-        <div className='flex items-center justify-center text-[#313131] text-[16px]'>
+        <div className='flex items-center justify-center text-[#313131] md:text-[16px]'>
             P.P.E Violations Table
         </div> 
         
@@ -36,7 +36,7 @@ function Top() {
                     <input type='text' placeholder='Search workers ...' className='w-full h-full  outline-none px-[10px]' />
                 </form>
             </div>
-            <div className='flex bg-red-800 min-w-[193px]'> heloo</div>
+            <div className='flex border border-zinc-300 text-[#909090] bg-white text-[12px] min-w-[193px] cursor-pointer items-center justify-center'> 29/10/2022   -   29/11/2022 v</div>
             <div className='flex items-center justify-between p-[10px] min-w-[183px] h-[30px] cursor-pointer bg-white rounded-sm border border-zinc-300'
                  onClick={(e)=>data.setDropInpute(!data.dropInpute)}>
                 <div className='flex items-center justify-center text-[#909090] text-[12px]'>

@@ -13,7 +13,7 @@ export default function Home() {
   return (
     
     <AppContextProvider>
-      <div className = 'flex w-fit h-fit bg-[#F2F2F2] '>
+      <div className = 'flex w-full h-fit bg-[#F2F2F2] '>
         <SideBar />
         <DashBoard />
         <DropLanguage/>

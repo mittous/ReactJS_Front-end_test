@@ -8,14 +8,25 @@ function CheckBoxFilter() {
 
     return (
         <>
-        {data.filterOn && <div className="flex items-center justify-center  absolute top-[300px] left-[100px] bg-gray-200">
-        <div className="  border-2 border-blue-600 rounded-lg bg-white">
-        <h3 className="text-lg font-semibold text-blue-600">Select </h3>
-        <div className="">
-                                <label className="flex ">
-                                    <input type="checkbox" className="form-checkbox text-blue-600" checked/>
-                                        <input type="text" />
-                                        <span className="">Protective gloves</span>
+        {data.filterOn && <div className="flex fixed rounded-[5px] my-[75px]  items-center justify-center   top-[200px] left-[100px] bg-gray-200">
+        <div className="  border border-zinc-300 rounded-[5px] bg-white">
+        <h3 className="flex p-2  items-center justify-center text-[#909090] text-[12px]"> Select columns to display </h3>
+        <div className="flex flex-col  ">
+                                <label className="flex p-2 ">
+                                    <input type="checkbox" className="flex text-blue-600 "/>
+                                        <span className="flex text-[#313131] pl-2 text-[12px]">Hard Hat</span>
+                                </label>
+                                <label className="flex p-2">
+                                    <input type="checkbox" className="flex text-blue-600 "/>
+                                        <span className="flex text-[#313131] pl-2 text-[12px]">Protective gloves</span>
+                                </label>
+                                <label className="flex p-2">
+                                    <input type="checkbox" className="flex text-blue-600 "/>
+                                        <span className="flex text-[#313131] pl-2 text-[12px]">Face shield</span>
+                                </label>
+                                <label className="flex p-2">
+                                    <input type="checkbox" className="flex text-blue-600 "/>
+                                        <span className="flex text-[#313131] pl-2 text-[12px]">Knee pads</span>
                                 </label>
                              </div>
                     </div>

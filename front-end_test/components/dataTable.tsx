@@ -151,7 +151,7 @@ const dataRow = [
 
   return (
       <>
-    <div className='h-full w-full py-[200px]'>
+    <div className='h-full flex flex-1  mx-[65px] w-full py-[200px]'>
       <table className="   border rounded-md bg-white  h-full w-full">
       <thead className=' outline outline-1 outline-gray-300 sticky top-[170px] '>
           <tr className=' bg-white  h-full  py-14'>

@@ -52,7 +52,7 @@ function DropProfile() {
 
 
     return (
-        <div className="absolute top-[70px] right-[40px]">
+        <div className="fixed  my-[75px]  right-1">
             {data.dropProfile && (
             <div className="rounded-[5px] shadow w-[165px] h-[186px] bg-white">
                 <ul className="flex h-full flex-col justify-between">
