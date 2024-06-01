@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Image from 'next/image';
+import { AppContext } from '@/app/context/AppContextProvider';
+import CheckBoxFilter from './CheckBoxFilter';
 
 function DataTable() {
+  const data:any = useContext(AppContext);
+
     const i = [-1];
     const dataColum = [
         {
@@ -127,26 +131,31 @@ function DataTable() {
       ];
 
 
-const dataRow = ["Row  1",
-        "Row  2",
-        "Row  3",
-        "Row  4",
-        "Row  5",
-        "Row  6",
-        "Row  7",
-        "Row  8",
-        "Row  9",
-        "Row  10",
-        "Row  11",
-        "Row  12"];
+const dataRow = [
+
+          "Row  1",
+          "Row  2",
+          "Row  3",
+          "Row  4",
+          "Row  5",
+          "Row  6",
+          "Row  7",
+          "Row  8",
+          "Row  9",
+          "Row  10",
+          "Row  11",
+          "Row  12"
+
+      
+      ];
 
   return (
+      <>
     <div className='h-full w-full py-[200px]'>
-    <div className=' fixed  bg-black items-center h-full py-[20px]'/>
-      <table className=" table-auto border-collapse border bg-white border-gray-400 h-full w-full">
-      <thead className='sticky top-[170px] bg-white'>
-          <tr className='border    h-full  border-b-gray-400 py-14'>
-            <th className="   px-[3px]  "> 
+      <table className="   border rounded-md bg-white  h-full w-full">
+      <thead className=' outline outline-1 outline-gray-300 sticky top-[170px] '>
+          <tr className=' bg-white  h-full  py-14'>
+            <th className="px-[3px]"> 
             <Image
               src='/assets/seetingsIcon.svg'
               alt='filter' 
@@ -154,30 +163,33 @@ const dataRow = ["Row  1",
               height={13}
               priority={true}
               draggable={false}
-              className='cursor-pointer flex justify-center items-center border-r border-gray-300 px-4 py-2 text-[12px] '
-              onClick={(e) => {console.log('filter')}}
+              className='cursor-pointer flex justify-center items-center   text-[12px] '
+              onClick={(e) => {data.setFilterOn(!data.filterOn)}}
             />
             </th>
-            <th className=" justify-center items-center  border border-gray-300 px-4 py-2 text-[12px] text-[#737373] "> Workers</th>
+            <th className="  text-[12px] text-[#737373] "> 
+              <div className='flex justify-center items-center shadow-[0_0_0_1px_rgba(242,242,242)] w-full h-full  '>
+                Workers
+              </div>
+            </th>
 
             {dataColum.map((column, index) => (
               !i.includes(index) && (
-                <th key={index} className="flex-col bg-white items-center justify-between border-b border-gray-300 p-4 ">
+                <th key={index} className="flex-col bg-white items-center justify-between top-0 border-b border-gray-300 p-4 ">
                   
-                    <div className='flex justify-center relative items-center w-[80px]  h-[86px] p-2  bg-[#F5F5F5] rounded-[5px]'>
+                    <div className='flex justify-center  items-center w-[80px] h-[86px]  bg-[#F5F5F5] rounded-[5px]'>
                       <div className='flex absolute'>
                         {column.icon}
                       </div>
                    
                   </div>
                   
-                  <span className='flex justify-center  text-center py-3 absolute text-neutral-500 text-[11px] font-normal'> 
+                  <span className='flex justify-center  text-center py-3  text-neutral-500 text-[11px] font-normal'> 
                     {column.label}
                   </span>
                   </th>
               )
             ))}
-            <hr />
           </tr>
       </thead>
       <tbody className='overflow-y-scroll h-full w-full'>
@@ -186,15 +198,15 @@ const dataRow = ["Row  1",
           <th className="border border-gray-300 px-4 py-2">Row Header 1</th>
           {dataRow.map((row, index) => (
             !i.includes(index) && (
-              <td key={index} className="border border-gray-300 px-4 py-2">{row}</td>
+              <td key={index} className="border-y border-gray-300 px-4 py-2">{row}</td>
             )))}
         </tr>
         <tr>
             <th className="border border-gray-300 px-[3px] text-[12px] text-[#737373] "> 2 </th>
-          <th className="border border-gray-300 px-4 py-2">Row Header 2</th>
+          <th className="border border-gray-300 px-4 py-2">Row Headesdsdsdsdsdr 2</th>
           {dataRow.map((row, index) => (
             !i.includes(index) && (
-              <td key={index} className="border border-gray-300 px-4 py-2">{row}</td>
+              <td key={index} className="border-y border-gray-300 px-4 py-2">{row}</td>
             )))}
         </tr>
         <tr>
@@ -202,7 +214,7 @@ const dataRow = ["Row  1",
           <th className="border border-gray-300 px-4 py-2">Row Header 3</th>
           {dataRow.map((row, index) => (
             !i.includes(index) && (
-              <td key={index} className="border border-gray-300 px-4 py-2">{row}</td>
+              <td key={index} className="border-y border-gray-300 px-4 py-2">{row}</td>
             )))}
         </tr>
         <tr>
@@ -210,7 +222,7 @@ const dataRow = ["Row  1",
           <th className="border border-gray-300 px-4 py-2">Row Header 1</th>
           {dataRow.map((row, index) => (
             !i.includes(index) && (
-              <td key={index} className="border border-gray-300 px-4 py-2">{row}</td>
+              <td key={index} className="border-y border-gray-300 px-4 py-2">{row}</td>
             )))}
         </tr>
         <tr>
@@ -218,7 +230,7 @@ const dataRow = ["Row  1",
           <th className="border border-gray-300 px-4 py-2">Row Header 2</th>
           {dataRow.map((row, index) => (
             !i.includes(index) && (
-              <td key={index} className="border border-gray-300 px-4 py-2">{row}</td>
+              <td key={index} className="border-y border-gray-300 px-4 py-2">{row}</td>
             )))}
         </tr>
         <tr>
@@ -226,7 +238,7 @@ const dataRow = ["Row  1",
           <th className="border border-gray-300 px-4 py-2">Row Header 3</th>
           {dataRow.map((row, index) => (
             !i.includes(index) && (
-              <td key={index} className="border border-gray-300 px-4 py-2">{row}</td>
+              <td key={index} className="border-y border-gray-300 px-4 py-2">{row}</td>
             )))}
         </tr>
         <tr>
@@ -234,7 +246,7 @@ const dataRow = ["Row  1",
           <th className="border border-gray-300 px-4 py-2">Row Header 1</th>
           {dataRow.map((row, index) => (
             !i.includes(index) && (
-              <td key={index} className="border border-gray-300 px-4 py-2">{row}</td>
+              <td key={index} className="border-y border-gray-300 px-4 py-2">{row}</td>
             )))}
         </tr>
         <tr>
@@ -242,7 +254,7 @@ const dataRow = ["Row  1",
           <th className="border border-gray-300 px-4 py-2">Row Header 2</th>
           {dataRow.map((row, index) => (
             !i.includes(index) && (
-              <td key={index} className="border border-gray-300 px-4 py-2">{row}</td>
+              <td key={index} className="border-y border-gray-300 px-4 py-2">{row}</td>
             )))}
         </tr>
         <tr>
@@ -250,7 +262,7 @@ const dataRow = ["Row  1",
           <th className="border border-gray-300 px-4 py-2">Row Header 3</th>
           {dataRow.map((row, index) => (
             !i.includes(index) && (
-              <td key={index} className="border border-gray-300 px-4 py-2">{row}</td>
+              <td key={index} className="border-y border-gray-300 px-4 py-2">{row}</td>
             )))}
         </tr>
         <tr>
@@ -258,7 +270,7 @@ const dataRow = ["Row  1",
           <th className="border border-gray-300 px-4 py-2">Row Header 1</th>
           {dataRow.map((row, index) => (
             !i.includes(index) && (
-              <td key={index} className="border border-gray-300 px-4 py-2">{row}</td>
+              <td key={index} className="border-y border-gray-300 px-4 py-2">{row}</td>
             )))}
         </tr>
         <tr>
@@ -266,7 +278,7 @@ const dataRow = ["Row  1",
           <th className="border border-gray-300 px-4 py-2">Row Header 2</th>
           {dataRow.map((row, index) => (
             !i.includes(index) && (
-              <td key={index} className="border border-gray-300 px-4 py-2">{row}</td>
+              <td key={index} className="border-y border-gray-300 px-4 py-2">{row}</td>
             )))}
         </tr>
         <tr>
@@ -274,12 +286,18 @@ const dataRow = ["Row  1",
           <th className="border border-gray-300 px-4 py-2">Row Header 3</th>
           {dataRow.map((row, index) => (
             !i.includes(index) && (
-              <td key={index} className="border border-gray-300 px-4 py-2">{row}</td>
+              <td key={index} className="border-y border-gray-300 px-4 py-2">{row}</td>
             )))}
         </tr>
       </tbody>
     </table>
-    </div>
+    
+        </div>
+            <CheckBoxFilter />
+        </>
+      
+
+    
   )
 }
 

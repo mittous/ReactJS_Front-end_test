@@ -12,7 +12,7 @@ function DashBoard() {
 
 
   return (
-    <div className= '   flex w-full h-full bg-[#F2F2F2] '>
+    <div className= '   flex w-full h-full '>
       <div className= ' flex flex-col h-full w-full '>
         <NavBar />
         <DataTable />

@@ -8,6 +8,7 @@ export default function AppContextProvider({children}: {children: React.ReactNod
   const [dropLanguage, setDropLanguage] = useState<boolean>(false);
   const [dropProfile, setDropProfile] = useState<boolean>(false);
   const [dropInpute, setDropInpute] = useState<boolean>(false);
+  const [filterOn, setFilterOn] = useState<boolean>(false);
 
   return (
     <div>
@@ -15,6 +16,7 @@ export default function AppContextProvider({children}: {children: React.ReactNod
                                       dropLanguage, setDropLanguage,
                                       dropProfile,  setDropProfile ,
                                       dropInpute ,  setDropInpute,
+                                      filterOn,     setFilterOn,
                                       } as any}>
           {children}
         </AppContext.Provider>

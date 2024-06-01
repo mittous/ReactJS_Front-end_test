@@ -10,7 +10,7 @@ function NavBar() {
   const data:any = useContext(AppContext);
 
   return (
-    <div className=' z-[99px] border border-zinc-300 min-h-[60px] bg-white fixed top-0 w-full'>
+    <div className=' z-[99px] border border-zinc-300 min-h-[60px] bg-red-700 fixed top-0 w-full'>
       <div className='flex justify-between items-center h-full py-[20px]'>
         
         <div className=' flex items-center mx-[18px]   '>
@@ -97,9 +97,8 @@ function NavBar() {
         </div>
       
       </div>
-        <DropLanguage/>
-        <DropProfile/>
-        <Sites />
+      <Sites />
+     
     </div>
   )
 }

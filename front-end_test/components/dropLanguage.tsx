@@ -71,7 +71,7 @@ function DropLanguage() {
 
 
     return (
-        <div className="absolute top-[75px] right-[150px] ">
+        <div className="absolute z-[1000px] top-[75px] right-[150px] ">
             {data.dropLanguage && (
             <div className=" rounded-[5px] gap-[10px]  shadow w-[133px] h-[161px]  bg-white">
                 <ul className="flex h-full flex-col justify-between py-[10px]">
