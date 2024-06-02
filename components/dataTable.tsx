@@ -10,10 +10,6 @@ function DataTable() {
   const columnHeadData = data.productIcons;
   const dataRow = data.workerRows;
 
-  console.log("columnHeadData", columnHeadData);
-  console.log("dataRow", dataRow);
-
-
   return (
     <>
       <div className="h-full flex flex-1 p-2 mx-[65px] w-full py-[200px]">
@@ -41,7 +37,7 @@ function DataTable() {
               </th>
 
               {columnHeadData.map(
-                (column, index: number) =>
+                (column: any, index: number) =>
                   !i.includes(index) && (
 
                     <th
@@ -71,7 +67,7 @@ function DataTable() {
           </thead>
 
           <tbody className="overflow-y-scroll h-full w-full">
-            {dataRow.map((Row, trIndex) => (
+            {dataRow.map((Row: any, trIndex:number) => (
               
               <tr key={trIndex}>
                   <th className="border border-gray-300 px-[3px] text-[12px] text-[#737373]">
@@ -94,7 +90,7 @@ function DataTable() {
                     </div>
                     <Image src={Row.biowanzeImg} alt="Biowanze Image" width={24} height={24} />
                   </th>
-                  {Row.rows.map((row, index) => (
+                  {Row.rows.map((row: any , index: number) => (
                         !i.includes(trIndex) && (
                     <td key={index} className="border-y border-gray-300 px-4 py-2">
                       {row}
