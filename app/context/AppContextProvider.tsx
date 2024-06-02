@@ -1,4 +1,6 @@
-import React, { createContext , useState} from 'react'
+import axios from 'axios';
+import React, { createContext , useEffect, useState} from 'react'
+import path from 'path';
 
 export const AppContext = createContext(null);
 
@@ -9,6 +11,26 @@ export default function AppContextProvider({children}: {children: React.ReactNod
   const [dropProfile, setDropProfile] = useState<boolean>(false);
   const [dropInpute, setDropInpute] = useState<boolean>(false);
   const [filterOn, setFilterOn] = useState<boolean>(false);
+  const [productIcons, setProductIcons] = useState<any>([]);
+  const [workerRows, setWorkerRows] = useState<any>([]);
+
+  useEffect(() => {
+    
+    const fetchData = async () => {
+      
+      try {
+        const response = await axios.get('/api/data');
+        console.log('Fetched products:', response.data);
+        setProductIcons(response.data.productIcons)
+        setWorkerRows(response.data.workerRows)
+
+      } catch (error) {
+        console.error('Failed to fetch products:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div>
@@ -17,6 +39,8 @@ export default function AppContextProvider({children}: {children: React.ReactNod
                                       dropProfile,  setDropProfile ,
                                       dropInpute ,  setDropInpute,
                                       filterOn,     setFilterOn,
+                                      productIcons, setProductIcons,
+                                      workerRows,   setWorkerRows
                                       } as any}>
           {children}
         </AppContext.Provider>
