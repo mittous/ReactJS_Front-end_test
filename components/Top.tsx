@@ -18,7 +18,7 @@ function Top() {
   return (
     <div className='flex justify-between items-center h-[70px] my-[35px] pl-[40px] pr-[80px]  w-full fixed bg-[#F2F2F2] '>
         
-        <div className='flex items-center justify-center text-[#313131] xl:text-[16px] text-nowrap'>
+        <div className='flex items-center justify-center text-[#313131] text-[13px] md:text-[17px] text-nowrap'>
             P.P.E Violations Table
         </div> 
         
