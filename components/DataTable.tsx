@@ -94,9 +94,9 @@ function DataTable() {
                 </th>
                 {Row.rows.map((row: number, index: number) => (
                   !data.filterData.includes(index) && (
-                    <td key={index} className=" border-y border-gray-300 px-4 py-2 ">
-                      <div className=" flex justify-center items-center  ">
-                        {row > 9 ? <div className="w-9 h-9  rounded-full flex justify-center items-center  bg-red-600 text-center" > {row}</div> : row < 9 ?
+                    <td key={index} className="top-[334px] border-y border-gray-300 px-4 py-2 ">
+                      <div className=" flex justify-center items-center">
+                        {row > 9 ? <div className="w-9 h-9  rounded-full flex justify-center items-center text-white bg-red-600 text-center "> {row}</div> : row < 9 ?
                           <div className=" bg-amber-400 w-9 h-9 rounded-full flex justify-center items-center  text-zinc-800 text-sm text-center" > {row}</div> :
                           <span className="text-[#C4C4C4]">-</span>
                         }

@@ -71,7 +71,7 @@ function SideBar() {
   const lastItems = menuItems.slice(2, 5);
 
   return (
-    <div className={` bg-white fixed left-0 border border-zinc-300 h-screen   ${data.navOn ? 'w-[252px]  transition duration-150 ease-in-out z-10 fixed' : ' z-10 min-w-[66px]'} `}>
+    <div className={` bg-white fixed left-0 border border-zinc-300 h-screen   ${data.navOn ? 'w-[252px]   z-10 fixed' : ' z-10 min-w-[66px]'} `}>
       {data.navOn && <div className='flex justify-between pl-[8px] pt-[10px] pr-[19px] pb-[10px] '>
 
         <Image src={Images.logo}
@@ -101,7 +101,7 @@ function SideBar() {
         className='m-[13px]'
       />}
 
-      <ul className={`${data.navOn ? 'px-[21px] ' : 'px-[6px]'} py-[20px] text-[#626262]`}>
+      <ul className={`${data.navOn ? 'px-[21px] ' : 'px-[6px]'} duration-500 ease-in-out py-[20px] text-[#626262]`}>
         {firstTwoItems.map((item, index: number ) => (
           <li key={index}
             className={`${data.navOn ? 'pl-[6px] justify-start ' : 'p-[6px] justify-center '}  hover:bg-[#42A4DF] hover:text-[#ffffff]  h-9   cursor-pointer rounded-[5px] flex  items-center group`}>
@@ -111,7 +111,7 @@ function SideBar() {
       </ul>
       {data.navOn ? <span className=' pl-[18px] mb-[5px] text-[#626262]' > MANAGE </span> : <hr />}
 
-      <ul className={`${data.navOn ? 'px-[21px] ' : 'px-[6px]'} py-[5px] text-[#626262]`}>
+      <ul className={`${data.navOn ? 'px-[21px] ' : 'px-[6px]'}  duration-500 ease-in-out py-[5px] text-[#626262]`}>
         {lastItems.map((item, index) => (
           <li key={index}
             className={`${data.navOn ? 'pl-[6px] justify-start ' : 'p-[6px] justify-center '}  hover:bg-[#42A4DF]  hover:text-[#ffffff] h-9   cursor-pointer rounded-[5px] flex  items-center group`}>
