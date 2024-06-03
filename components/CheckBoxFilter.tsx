@@ -1,9 +1,9 @@
 import { AppContext } from "@/app/context/AppContextProvider";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 
 function CheckBoxFilter() {
   const data: any = useContext(AppContext);
-
+  const checkboxRef = React.useRef<HTMLDivElement>(null);
   const handleCheckboxChange = (rowIndex: number) => {
     data.setFilterData((prevFilterData: number[]) => {
       if (prevFilterData.includes(rowIndex)) {
@@ -15,6 +15,19 @@ function CheckBoxFilter() {
   };
 
 
+  useEffect(() => {
+    const handleClickOutside = (event: any) => {
+      if (checkboxRef.current && !checkboxRef.current.contains(event.target)) {
+        data.setFilterOn(!data.filterOn);
+      }
+
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+},[]);
+
   return (
     <>
       {data.filterOn && (
@@ -22,7 +35,7 @@ function CheckBoxFilter() {
 
 
 
-            top-[200px] left-[100px] bg-gray-200">
+            top-[200px] left-[100px] bg-gray-200" ref={checkboxRef}>
           <div className="  border border-zinc-300 rounded-[5px] bg-white">
             <h3 className="flex p-2  items-center justify-center text-[#909090] text-[12px]">
               Select columns to display

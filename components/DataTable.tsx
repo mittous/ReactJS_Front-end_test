@@ -16,7 +16,7 @@ function DataTable() {
         <table className="  border justify-center  rounded-md bg-white   ">
           <thead className=" outline outline-1 justify-center items-center bg-white outline-gray-300 sticky top-[170px] ">
             <tr className=" bg-white h-full  py-14">
-              <th className="px-[3px] my-custom-div left-corner-costum">
+              <th className="px-[3px] my-custom-div  h-full">
                 <Image
                   src="/assets/seetingsIcon.svg"
                   alt="filter"
@@ -30,7 +30,7 @@ function DataTable() {
                   }}
                 />
               </th>
-              <th className="my-v2-custum-div left-corner-costum justify-center bg-white items-center max-w-[200px] outline outline-1 outline-gray-300 h-full">
+              <th className="my-v2-custum-div  justify-center bg-white items-center max-w-[100px]  outline outline-1 outline-gray-300 h-full">
                 <div className="text-[12px] text-[#737373]">
                   Workers
                 </div>
@@ -69,7 +69,7 @@ function DataTable() {
             {dataRow.map((Row: any, trIndex: number) => (
 
               <tr key={trIndex} >
-                <th className="my-custom-div top-[334px] outline outline-1 outline-gray-300 px-[3px] text-[12px] text-[#737373]">
+                <th className="my-custom-div top-[334px] outline outline-1 w-3 outline-gray-300 px-[3px] text-[12px] text-[#737373]">
                   {trIndex + 1}
                 </th>
                 <th className=" my-v2-custum-div top-[334px] min-w-[300px] outline outline-1 outline-gray-300  px-[10px] py-[4px]">
