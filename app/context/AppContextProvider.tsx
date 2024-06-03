@@ -13,6 +13,7 @@ export default function AppContextProvider({children}: {children: React.ReactNod
   const [filterOn, setFilterOn] = useState<boolean>(false);
   const [productIcons, setProductIcons] = useState<any>([]);
   const [workerRows, setWorkerRows] = useState<any>([]);
+  const [filterData, setFilterData] = useState<number[]>([]);
 
   useEffect(() => {
     
@@ -40,7 +41,8 @@ export default function AppContextProvider({children}: {children: React.ReactNod
                                       dropInpute ,  setDropInpute,
                                       filterOn,     setFilterOn,
                                       productIcons, setProductIcons,
-                                      workerRows,   setWorkerRows
+                                      workerRows,   setWorkerRows,
+                                      filterData,   setFilterData
                                       } as any}>
           {children}
         </AppContext.Provider>

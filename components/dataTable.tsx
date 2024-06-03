@@ -6,7 +6,7 @@ import CheckBoxFilter from "./CheckBoxFilter";
 function DataTable() {
   const data: any = useContext(AppContext);
 
-  const i = [-1];
+  
   const columnHeadData = data.productIcons;
   const dataRow = data.workerRows;
 
@@ -38,7 +38,7 @@ function DataTable() {
 
               {columnHeadData.map(
                 (column: any, index: number) =>
-                  !i.includes(index) && (
+                  !data.filterData.includes(index) && (
 
                     <th
                       key={index}
@@ -91,7 +91,7 @@ function DataTable() {
                     <Image src={Row.biowanzeImg} alt="Biowanze Image" width={24} height={24} />
                   </th>
                   {Row.rows.map((row: any , index: number) => (
-                        !i.includes(trIndex) && (
+                        !data.filterData.includes(index) && (
                     <td key={index} className="border-y border-gray-300 px-4 py-2">
                       {row}
                     </td>
@@ -103,6 +103,8 @@ function DataTable() {
 
         </table>
       </div>
+      {  console.log("filterData =", data.filterData)
+}
       <CheckBoxFilter />
     </>
   );
