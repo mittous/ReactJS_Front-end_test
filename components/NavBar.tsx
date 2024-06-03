@@ -1,9 +1,6 @@
 import React, { useContext } from 'react'
 import { AppContext } from '../app/context/AppContextProvider'
 import Image from 'next/image'
-import dropLanguage from './dropLanguage';
-import DropLanguage from './dropLanguage';
-import DropProfile from './DropProfile';
 import Sites from './Sites';
 
 function NavBar() {

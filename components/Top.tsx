@@ -18,12 +18,12 @@ function Top() {
   return (
     <div className='flex justify-between items-center h-[70px] my-[35px] pl-[40px] pr-[80px]  w-full fixed bg-[#F2F2F2] '>
         
-        <div className='flex items-center justify-center text-[#313131] md:text-[16px]'>
+        <div className='flex items-center justify-center text-[#313131] text-[13px] md:text-[17px] text-nowrap'>
             P.P.E Violations Table
         </div> 
         
         <div className='flex gap-[11px]'>
-            <div className='flex items-center p-[10px] min-w-[365px] h-[30px] bg-white rounded-sm border border-zinc-300'>
+            <div className='flex items-center px-[20px] max-w-[365px] min-w-[200px] h-[30px] bg-white rounded-sm border border-zinc-300'>
                 <Image  src='/assets/Search.svg'
                       alt='toggle' 
                       width={13} 
@@ -33,12 +33,12 @@ function Top() {
                       className=''
                       />
                 <form>
-                    <input type='text' placeholder='Search workers ...' className='w-full h-full  outline-none px-[10px]' />
+                    <input type='text' placeholder='Search workers ...' className='w-full h-full  outline-none pl-[10px]' />
                 </form>
             </div>
             <div className='flex border border-zinc-300 text-[#909090] bg-white text-[12px] min-w-[193px] cursor-pointer items-center justify-center'> 29/10/2022   -   29/11/2022 v</div>
             <div className='flex items-center justify-between p-[10px] min-w-[183px] h-[30px] cursor-pointer bg-white rounded-sm border border-zinc-300'
-                 onClick={(e)=>data.setDropInpute(!data.dropInpute)}>
+                 >
                 <div className='flex items-center justify-center text-[#909090] text-[12px]'>
                     All Contractors
                 </div> 
@@ -50,7 +50,7 @@ function Top() {
                       draggable={false}
                       />
             </div>
-            <div className='flex bg-withe rounded-sm border px-[9px] border-zinc-300'>
+            <div className='flex bg-withe rounded-sm border px-[9px] border-zinc-300 cursor-pointer'>
                 
                 <Image  src='/assets/miximizeIcon.svg'
                         alt='miximize' 

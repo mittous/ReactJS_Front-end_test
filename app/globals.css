@@ -8,9 +8,27 @@
 }
 
 body {
-  background-color: var(--background-color); /* Apply background color */
-  color: var(--text-color); /* Apply text color */
+  background-color: var(--background-color);
+  color: var(--text-color);
   font-family: 'Roboto';
   margin: 0;
   padding: 0;
 }
+
+.my-custom-div {
+  background-color: white;
+  color: #727272 ;
+  position: sticky;
+  width: 100%;
+  margin-left: 65px;
+  left: 65px;
+}
+.my-v2-custum-div{
+  background-color:white ;
+  width: 100%;
+  position: sticky;
+  color: #727272;
+  left: 85px;
+
+}
+
