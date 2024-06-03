@@ -1,7 +1,6 @@
 import { AppContext } from '@/app/context/AppContextProvider';
 import React, { useContext, useEffect, useRef } from 'react'
 import Image from 'next/image';
-import { v4 as uuidv4 } from 'uuid';
 
 function DropProfile() {
     const data:any = useContext(AppContext);
