@@ -18,13 +18,13 @@ function CheckBoxFilter() {
   useEffect(() => {
     const handleClickOutside = (event: any) => {
       if (checkboxRef.current && !checkboxRef.current.contains(event.target)) {
-        data.setFilterOn(!data.filterOn);
+        data.setFilterOn(false);
       }
-
-    };
+    }
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+
     };
 },[]);
 

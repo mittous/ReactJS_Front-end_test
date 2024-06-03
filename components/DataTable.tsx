@@ -16,7 +16,7 @@ function DataTable() {
         <table className="  border justify-center  rounded-md bg-white   ">
           <thead className=" outline outline-1 justify-center items-center bg-white outline-gray-300 sticky top-[170px] ">
             <tr className=" bg-white h-full  py-14">
-              <th className="px-[3px] my-custom-div  h-full">
+              <th className="px-[3px] my-custom-div  h-full" >
                 <Image
                   src="/assets/seetingsIcon.svg"
                   alt="filter"
