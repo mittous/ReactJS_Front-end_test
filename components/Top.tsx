@@ -38,7 +38,7 @@ function Top() {
             </div>
             <div className='flex border border-zinc-300 text-[#909090] bg-white text-[12px] min-w-[193px] cursor-pointer items-center justify-center'> 29/10/2022   -   29/11/2022 v</div>
             <div className='flex items-center justify-between p-[10px] min-w-[183px] h-[30px] cursor-pointer bg-white rounded-sm border border-zinc-300'
-                 onClick={(e)=>data.setDropInpute(!data.dropInpute)}>
+                 >
                 <div className='flex items-center justify-center text-[#909090] text-[12px]'>
                     All Contractors
                 </div> 
@@ -50,7 +50,7 @@ function Top() {
                       draggable={false}
                       />
             </div>
-            <div className='flex bg-withe rounded-sm border px-[9px] border-zinc-300'>
+            <div className='flex bg-withe rounded-sm border px-[9px] border-zinc-300 cursor-pointer'>
                 
                 <Image  src='/assets/miximizeIcon.svg'
                         alt='miximize' 

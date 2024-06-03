@@ -12,7 +12,7 @@ function DataTable() {
 
   return (
     <>
-      <div className="h-full  w-full flex flex-1 ml-[65px] mt-[50px]  py-[200px] p-[40px]">
+      <div className="  w-full flex flex-1 ml-[65px]   py-[200px] p-[40px]">
         <table className="  border justify-center  rounded-md bg-white   ">
           <thead className=" outline outline-1 justify-center items-center bg-white outline-gray-300 sticky top-[170px] ">
             <tr className=" bg-white h-full  py-14">
@@ -30,8 +30,8 @@ function DataTable() {
                   }}
                 />
               </th>
-              <th className="my-v2-custum-div left-corner-costum  justify-center  bg-white items-center  max-w-[200px] outline outline-1 outline-gray-300 h-full   ">
-                <div className="text-[12px] text-[#737373] ">
+              <th className="my-v2-custum-div left-corner-costum justify-center bg-white items-center max-w-[200px] outline outline-1 outline-gray-300 h-full">
+                <div className="text-[12px] text-[#737373]">
                   Workers
                 </div>
               </th>
