@@ -12,10 +12,10 @@ function DataTable() {
 
   return (
     <>
-      <div className="h-full flex flex-1 p-2 mx-[65px] w-full py-[200px]">
-        <table className="   border rounded-md bg-white  h-full w-full">
-          <thead className=" outline outline-1 outline-gray-300 sticky top-[170px] ">
-            <tr className=" bg-white  h-full  py-14">
+      <div className="h-full  items-center flex flex-1  p-2 ml-[65px]  py-[200px] px-[20px]">
+        <table className="  border justify-center  rounded-md bg-white  h-full max-w[1000px]">
+          <thead className=" outline outline-1 justify-center items-center outline-gray-300 sticky top-[170px] ">
+            <tr className=" bg-white h-full  py-14">
               <th className="px-[3px]">
                 <Image
                   src="/assets/seetingsIcon.svg"
@@ -24,14 +24,14 @@ function DataTable() {
                   height={13}
                   priority={true}
                   draggable={false}
-                  className="cursor-pointer flex justify-center items-center   text-[12px] "
+                  className="cursor-pointer flex justify-center items-center"
                   onClick={(e) => {
                     data.setFilterOn(!data.filterOn);
                   }}
                 />
               </th>
-              <th className="  text-[12px] text-[#737373] ">
-                <div className="flex justify-center items-center shadow-[0_0_0_1px_rgba(242,242,242)] w-full h-full  ">
+              <th className=" flex justify-center  items-center relative max-w-[200px] shadow-[0_0_0_1px_rgba(242,242,242)] h-full   ">
+                <div className="text-[12px] text-[#737373] ">
                   Workers
                 </div>
               </th>
@@ -42,7 +42,7 @@ function DataTable() {
 
                     <th
                       key={index}
-                      className="flex-col bg-white items-center justify-between p-4 pb-0"
+                      className="flex-col bg-white items-center justify-between p-4 pb-0 flex-1"
                     >
                       <div className="flex justify-center  items-center min-w-[80px] h-[86px] bg-[#F5F5F5] rounded-[5px]">
                         <div className="flex absolute justify-center items-center">
@@ -73,7 +73,7 @@ function DataTable() {
                   <th className="border border-gray-300 px-[3px] text-[12px] text-[#737373]">
                     {trIndex + 1}
                   </th>
-                  <th className="flex justify-between min-w-[200px] border border-gray-300 px-[10px] py-[4px]">
+                  <th className="flex justify-between w-[200px] border border-gray-300 px-[10px] py-[4px]">
                     <div className="flex">
                       <Image
                         src={Row.workerIcon}
