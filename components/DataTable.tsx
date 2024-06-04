@@ -2,69 +2,19 @@ import React, { useContext } from "react";
 import Image from "next/image";
 import { AppContext } from "@/app/context/AppContextProvider";
 import CheckBoxFilter from "./CheckBoxFilter";
+import TheadTable from "./TheadTable";
 
 function DataTable() {
   const data: any = useContext(AppContext);
 
 
-  const columnHeadData = data.productIcons;
   const dataRow = data.workerRows;
 
   return (
     <>
       <div className="  w-full flex flex-1 ml-[65px]   py-[200px] p-[40px]">
-        <table className="  border justify-center  rounded-md bg-white   ">
-          <thead className=" outline outline-1 justify-center items-center bg-white outline-gray-300 sticky top-[170px] ">
-            <tr className=" bg-white h-full  py-14">
-              <th className="px-[3px] my-custom-div  h-full" >
-                <Image
-                  src="/assets/seetingsIcon.svg"
-                  alt="filter"
-                  width={13}
-                  height={13}
-                  priority={true}
-                  draggable={false}
-                  className="cursor-pointer  "
-                  onClick={(e) => {
-                    data.setFilterOn(!data.filterOn);
-                  }}
-                />
-              </th>
-              <th className="my-v2-custum-div  justify-center bg-white items-center max-w-[100px]  outline outline-1 outline-gray-300 h-full">
-                <div className="text-[12px] text-[#737373]">
-                  Workers
-                </div>
-              </th>
-
-              {columnHeadData.map(
-                (column: any, index: number) =>
-                  !data.filterData.includes(index) && (
-
-                    <th
-                      key={index}
-                      className="flex-col bg-white items-center justify-between p-4 pb-0 flex-1"
-                    >
-                      <div className="flex justify-center  items-center min-w-[80px] h-[86px] bg-[#F5F5F5] rounded-[5px]">
-                        <div className="flex  justify-center items-center">
-                          <Image
-                            src={column.src}
-                            alt={column.alt}
-                            width={column.width}
-                            height={column.height}
-                            priority={true}
-                          />
-                        </div>
-                      </div>
-
-                      <span className="flex justify-center  text-center pt-3 h-[60px]  text-neutral-500 text-[11px] font-normal">
-                        {column.label}
-                      </span>
-                    </th>
-                  )
-              )}
-            </tr>
-          </thead>
-
+        <table className="  border justify-center h-full rounded-md bg-white   ">
+        <TheadTable />
           <tbody className="overflow-y-scroll h-full w-full">
             {dataRow.map((Row: any, trIndex: number) => (
 
@@ -94,7 +44,7 @@ function DataTable() {
                 </th>
                 {Row.rows.map((row: number, index: number) => (
                   !data.filterData.includes(index) && (
-                    <td key={index} className="top-[334px] border-y border-gray-300 px-4 py-2 ">
+                    <td key={index} className="border-y border-gray-300 px-4 py-2 ">
                       <div className=" flex justify-center items-center">
                         {row > 9 ? <div className="w-9 h-9  rounded-full flex justify-center items-center text-white bg-red-600 text-center "> {row}</div> : row < 9 ?
                           <div className=" bg-amber-400 w-9 h-9 rounded-full flex justify-center items-center  text-zinc-800 text-sm text-center" > {row}</div> :
@@ -102,8 +52,6 @@ function DataTable() {
                         }
                       </div>
                     </td>
-
-
                   )
                 ))}
               </tr>
