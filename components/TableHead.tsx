@@ -1,16 +1,30 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Image from "next/image";
 import { AppContext } from "@/app/context/AppContextProvider";
 
-function TheadTable() {
+function TableHead() {
   const data: any = useContext(AppContext);
-
-
   const columnHeadData = data.productIcons;
+  const checkboxRef = React.useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: any) => {
+      if (checkboxRef.current && !checkboxRef.current.contains(event.target)) {
+        data.setFilterOn(false);
+      }
+    }
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+
+    };
+},[]);
+
+
   return (
-    <thead className=" h-[150px] outline outline-1 justify-center items-center bg-white outline-gray-300 sticky top-[170px] ">
+    <thead className=" h-[150px] outline outline-1 justify-center items-center bg-white outline-gray-300 sticky top-[170px]">
     <tr className=" bg-white h-full  py-14">
-      <th className="px-[3px] my-custom-div  h-full" >
+      <th className="px-[3px] my-custom-div  h-full">
         <Image
           src="/assets/seetingsIcon.svg"
           alt="filter"
@@ -19,6 +33,7 @@ function TheadTable() {
           priority={true}
           draggable={false}
           className="cursor-pointer  "
+          
           onClick={(e) => {
             data.setFilterOn(!data.filterOn);
           }}
@@ -61,4 +76,4 @@ function TheadTable() {
   )
 }
 
-export default TheadTable
+export default TableHead
